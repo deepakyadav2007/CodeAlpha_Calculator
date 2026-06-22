@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator - CodeAlpha</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Calculator</title>
+<link rel="stylesheet" href="style.css">
+<style>
+</style>
 </head>
 <body>
 
-<div class="calculator">
-    <input type="text" id="display" readonly>
+<div class="phone">
+  <div class="screen">
+    <div class="notch"></div>
+    <div class="calculator">
+      <div class="display-wrap">
+        <div class="history" id="history"></div>
+        <div class="display" id="display">0</div>
+      </div>
 
-    <div class="buttons">
-        <button onclick="clearDisplay()" class="operator">C</button>
-        <button onclick="deleteLast()" class="operator">⌫</button>
-        <button onclick="appendValue('%')" class="operator">%</button>
-        <button onclick="appendValue('/')" class="operator">÷</button>
+      <div class="keys">
+        <button class="key mid" data-action="clear" id="clearBtn">AC</button>
+        <button class="key mid" data-action="negate">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12l5-5M4 12l5 5"/></svg>
+        </button>
+        <button class="key mid" data-action="percent">%</button>
+        <button class="key orange" data-action="divide">÷</button>
 
-        <button onclick="appendValue('7')">7</button>
-        <button onclick="appendValue('8')">8</button>
-        <button onclick="appendValue('9')">9</button>
-        <button onclick="appendValue('*')" class="operator">×</button>
+        <button class="key dark" data-action="number" data-value="7">7</button>
+        <button class="key dark" data-action="number" data-value="8">8</button>
+        <button class="key dark" data-action="number" data-value="9">9</button>
+        <button class="key orange" data-action="multiply">×</button>
 
-        <button onclick="appendValue('4')">4</button>
-        <button onclick="appendValue('5')">5</button>
-        <button onclick="appendValue('6')">6</button>
-        <button onclick="appendValue('-')" class="operator">−</button>
+        <button class="key dark" data-action="number" data-value="4">4</button>
+        <button class="key dark" data-action="number" data-value="5">5</button>
+        <button class="key dark" data-action="number" data-value="6">6</button>
+        <button class="key orange" data-action="subtract">−</button>
 
-        <button onclick="appendValue('1')">1</button>
-        <button onclick="appendValue('2')">2</button>
-        <button onclick="appendValue('3')">3</button>
-        <button onclick="appendValue('+')" class="operator">+</button>
+        <button class="key dark" data-action="number" data-value="1">1</button>
+        <button class="key dark" data-action="number" data-value="2">2</button>
+        <button class="key dark" data-action="number" data-value="3">3</button>
+        <button class="key orange" data-action="add">+</button>
 
-        <button onclick="appendValue('0')" class="zero">0</button>
-        <button onclick="appendValue('.')">.</button>
-        <button onclick="calculate()" class="equal">=</button>
+        <button class="key dark zero" data-action="number" data-value="0">0</button>
+        <button class="key dark" data-action="decimal">.</button>
+        <button class="key orange" data-action="equals">=</button>
+      </div>
     </div>
+  </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
